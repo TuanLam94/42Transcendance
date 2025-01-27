@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres
+    container_name: pong_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pong_tournament
+    ports:
+      - "5432:5432"  # Port PostgreSQL
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+    container_name: pong_backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/code
+    ports:
+      - "8000:8000"  # Port pour accéder à l'API
+    depends_on:
+      - db
+
+  frontend:
+    image: nginx
+    container_name: pong_frontend
+    ports:
+      - "8080:80"  # Port pour accéder au frontend
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro  # Serveur de fichiers statiques
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

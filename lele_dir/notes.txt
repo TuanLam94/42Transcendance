@@ -1,0 +1,33 @@
+-----------------Pk nginx--------------------------------
+
+Nginx peut jouer le rôle de reverse proxy, c'est-à-dire qu'il agit comme 
+intermédiaire entre les utilisateurs et tes services backend.
+
+Exemple typique dans ton cas :
+
+    Les requêtes vers /api/ (ton API Django) sont envoyées au backend 
+		(port 8000).
+    Les requêtes pour des fichiers statiques (HTML/JS/CSS) sont servies
+		directement par nginx.
+
+. Sécuriser et optimiser ton site
+
+SSL/TLS (HTTPS)
+Nginx peut gérer les certificats SSL/TLS pour sécuriser ton site avec 
+HTTPS. Cela protège les données échangées entre tes utilisateurs et ton 
+serveur (par exemple, les requêtes API).
+
+Gérer les performances et la mise en cache
+Pourquoi ?
+Nginx peut mettre en cache des fichiers statiques ou des réponses 
+fréquentes pour améliorer les performances :
+	Les fichiers JS, CSS, et images sont souvent les mêmes pour tous les 
+		utilisateurs. Nginx peut les mettre en cache pour éviter de les 
+		charger depuis le disque à chaque requête.
+	Cela réduit la latence et diminue la charge sur le disque ou le 
+		serveur backend.
+
+Pour des projets simples avec peu de trafic, le serveur intégré de Django
+peut suffire (même si ce n'est pas optimisé pour la production).
+
+----------------------------------------------------------
