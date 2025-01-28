@@ -1,13 +1,15 @@
 services:
   db:
-    image: postgres
+    image: postgres:latest
     container_name: postgres_db
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - db:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    secrets:
+      - postgres_password
     ports:
       - "5432:5432"
     healthcheck:
@@ -18,31 +20,31 @@ services:
 
   backend:
     build: ./backend
-    container_name: django_backend
-    restart: always
-    command: python manage.py runserver 0.0.0.0:8000
+    image: backend_django
+    container_name: backend_django
+    command: python manage.py runserver 0.0.0.0:8000 # @leontinepaq a changer plus tard??
     volumes:
       - ./backend:/code
     ports:
       - "8000:8000"
     depends_on:
       db:
-          condition: service_healthy
+        condition: service_healthy
 
-  # frontend:
-  #   image: nginx
-  #   ports:
-  #     - "8080:80"  # Port pour accéder au frontend
-  #   volumes:
-  #     - ./frontend:/usr/share/nginx/html:ro  # Serveur de fichiers statiques
-  #   depends_on:
-  #     - backend
+  frontend:
+      image: nginx:latest
+      container_name: frontend
+      ports:
+        - "8080:80"  # Port pour accéder au frontend
+      volumes:
+        - ./frontend:/usr/share/nginx/html:ro  # Serveur de fichiers statiques
+      depends_on:
+      - backend
 
-# volumes:
-#   db:
-#     name: db
-#     driver: local
-#     driver_opts:
-#       device: ./data/db
-#       o : bind
-#       type : none
+volumes:
+  db:
+    name: postgres_data
+
+secrets:
+  postgres_password:
+   file: ./secrets/postgres_password.txt
