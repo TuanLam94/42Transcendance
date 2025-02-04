@@ -1,0 +1,167 @@
+.play {
+	background-color: #001b2e;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+  }
+  
+  .play .div {
+	background-color: #001b2e;
+	width: 1440px;
+	height: 848px;
+	position: relative;
+  }
+  
+  .play .navbar {
+	display: inline-flex;
+	height: 80px;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 6px 663px;
+	position: absolute;
+	top: 0;
+	left: 0;
+  }
+  
+  .play .text-wrapper {
+	position: relative;
+	width: fit-content;
+	margin-top: -1.50px;
+	font-family: "Jersey 10-Regular", Helvetica;
+	font-weight: 400;
+	color: #f1ebda;
+	font-size: 64px;
+	text-align: center;
+	letter-spacing: 0;
+	line-height: normal;
+	white-space: nowrap;
+  }
+  
+  .play .game {
+	display: flex;
+	flex-direction: column;
+	width: 1144px;
+	align-items: center;
+	justify-content: center;
+	gap: 18px;
+	padding: 20px 110px;
+	position: absolute;
+	top: 80px;
+	left: 148px;
+  }
+  
+  .play .canvas {
+	display: flex;
+	width: 912px;
+	height: 510px;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+  }
+  
+  .play .field {
+	position: relative;
+	flex: 1;
+	align-self: stretch;
+	flex-grow: 1;
+	background-color: #052f4d;
+	border-radius: 40px;
+  }
+  
+  .play .missile {
+	position: absolute;
+	width: 69px;
+	height: 69px;
+	top: 242px;
+	left: 342px;
+  }
+  
+  .play .paddle {
+	position: absolute;
+	width: 10px;
+	height: 80px;
+	top: 219px;
+	left: 10px;
+	background-color: #f1ebda;
+	border-radius: 16px;
+	border: 8px solid;
+  }
+  
+  .play .paddle-2 {
+	position: absolute;
+	width: 10px;
+	height: 80px;
+	top: 189px;
+	left: 892px;
+	background-color: #f1ebda;
+	border-radius: 16px;
+	border: 8px solid;
+  }
+  
+  .play .score {
+	position: absolute;
+	height: 97px;
+	top: 53px;
+	left: 189px;
+	font-family: "Karantina-Bold", Helvetica;
+	font-weight: 700;
+	color: #001b2e;
+	font-size: 96px;
+	text-align: center;
+	letter-spacing: 0;
+	line-height: normal;
+	white-space: nowrap;
+  }
+  
+  .play .score-2 {
+	position: absolute;
+	height: 97px;
+	top: 53px;
+	left: 652px;
+	font-family: "Karantina-Bold", Helvetica;
+	font-weight: 700;
+	color: #001b2e;
+	font-size: 96px;
+	text-align: center;
+	letter-spacing: 0;
+	line-height: normal;
+	white-space: nowrap;
+  }
+  
+  .play .button {
+	all: unset;
+	box-sizing: border-box;
+	position: relative;
+	min-width: 200px;
+	max-width: 200px;
+	width: 100%;
+	height: 60px;
+  }
+  
+  .play .overlap-group {
+	position: relative;
+	width: 200px;
+	height: 60px;
+	background-color: #f1ebda;
+	border-radius: 40px;
+	box-shadow: 0px 4px 4px #00000040;
+  }
+  
+  .play .text-wrapper-2 {
+	position: absolute;
+	width: 200px;
+	height: 16px;
+	top: 22px;
+	left: 0;
+	font-family: "Jersey 10-Regular", Helvetica;
+	font-weight: 400;
+	color: #001b2e;
+	font-size: 32px;
+	text-align: center;
+	letter-spacing: 0;
+	line-height: normal;
+	white-space: nowrap;
+  }
+  
