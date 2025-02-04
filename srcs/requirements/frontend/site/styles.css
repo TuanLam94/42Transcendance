@@ -1,7 +1,105 @@
-/*
- * Custom CSS
- */
+body {
+    background-color: #010407;
+}
 
-:root {
-  --bs-body-bg: var(--bs-gray-100);
+.card {
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #1f0050;
+}
+
+#game-area {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background: rgb(14, 6, 128);
+    margin: auto;
+    border: 2px solid rgb(7, 0, 109);
+}
+
+#ball {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    left: 245px;
+    top: 145px;
+}
+
+#leftPaddle, #rightPaddle {
+    position: absolute;
+    width: 10px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+#leftPaddle {
+    left: 5px;
+    top: 125px;
+}
+
+#rightPaddle {
+    right: 5px;
+    top: 125px;
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;  /* Caché à gauche par défaut */
+    width: 250px;
+    height: 100%;
+    background-color: #007af3;
+    padding-top: 70px;
+    transition: 0.3s; /* Animation pour le déplacement */
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#sidebar ul li {
+    padding: 60px;
+    text-align: center;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    background-color: #0080ff;
+}
+
+/* Bouton d'ouverture du menu */
+#openBtn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Lorsque la barre est ouverte */
+#sidebar.open {
+    left: 0;
 }
