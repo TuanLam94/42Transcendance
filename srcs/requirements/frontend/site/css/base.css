@@ -1,0 +1,29 @@
+/* COLORS */
+:root {
+  --color-dark: #001b2e;
+  --color-light: #f1ebda;
+  --color-accent: #511db2;
+  --color-accent-light: #ffffff;
+  --color-accent-secondary: #9628b3;
+  --color-accent-tertiary: #f24c00;
+
+  --color-dark-transparent: #00000066;
+  --color-light-transparent: #ffffffcc;
+  --color-accent-transparent: #511db266;
+
+  --color-background: #521369b8;
+}
+
+/* GLOBAL STYLE */
+body {
+  background: radial-gradient(circle, #000 20%, var(--color-dark));
+  font-family: "Jersey 15", serif;
+  color: var(--color-light);
+}
+
+#app {
+  min-height: calc(100vh - 24rem); /* 100vh minus navbar height * 2 to be centered*/
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
